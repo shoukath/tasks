@@ -1,0 +1,1 @@
+<?phpinclude("../../business/CategoryBiz.php");class CategoryCtl{	public function setPosition($category)    {    	$categoryBiz = new CategoryBiz();    	$categoryBiz->setPosition($category);		return $category->getId();    }    	public function addCategory($category)    {    	$categoryBiz = new CategoryBiz();    	return $categoryBiz->addCategory($category);    }}?>

@@ -1,0 +1,19 @@
+<?php
+include("./objects/user.php");
+include("./controller/loginUserctl.php");
+
+$user = new User();
+$member = new LoginUserCtl();
+
+$user->setUserId($_POST["username"]);
+$user->setPassword($_POST["password"]);
+?>
+<?php
+$user = $member->loginUser($user->getUserId(), $user->getPassword());
+if($user!=null){
+	echo($user->getFirstname());
+}else{
+	//echo("Invalid");
+	header( 'Location: index.php' ) ;
+}
+?>
